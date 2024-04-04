@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export EDITOR="nvim"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -39,8 +40,12 @@ alias c="clear"
 alias vi="nvim"
 alias viconf="cd ~/.config/nvim"
 
-eval "$(starship init zsh)"
-
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+
+eval "$(starship init zsh)"
