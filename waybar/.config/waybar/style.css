@@ -2,15 +2,14 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: Material Design Icons, JetBrainsMono Nerd Font;
-  font-size: 13px;
+  font-family: Iosevka Nerd Font, Material Design Icons, JetBrainsMono Nerd Font;
+  font-size: 14px;
 }
 
 window#waybar {
-  /* background-color: #181825; */
-  /* transition-property: background-color; */
-  /* transition-duration: 0.5s; */
-  background-color: transparent;
+  background-color: #181825;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -119,8 +118,7 @@ window#waybar.hidden {
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
-  background-color: transparent;
-  color: #FFFEFE;
+  background-color: #cba6f7;
 }
 
 #custom-power {
