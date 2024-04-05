@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "height": 34,
+  "height": 42,
   "modules-left": [
     "custom/logo",
     "hyprland/workspaces"
@@ -46,7 +46,7 @@
       "persistent_workspaces": {
         "1": [],
         "2": [],
-        "3": [],
+        "3": []
       }
     },
     "memory": {
@@ -91,8 +91,8 @@
     },
     "custom/logo": {
       "format": "  ",
-      "tooltip": false,
-      "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
+      // "tooltip": false,
+      // "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
     },
     "battery": {
       "format": "{capacity}% {icon}",
