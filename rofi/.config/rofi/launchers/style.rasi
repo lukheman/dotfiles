@@ -3,9 +3,14 @@
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
  * 
+ * Modified : Akmal
+ * Github : @pandas-id
+ *
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
+
+@import                          "colors.rasi"
 
 /*****----- Configuration -----*****/
 configuration {
@@ -14,10 +19,6 @@ configuration {
   display-drun:               "";
 	drun-display-format:        "{name}";
 }
-
-/*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {

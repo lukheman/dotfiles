@@ -2,15 +2,17 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
+ *
+ * Modified : Akmal
+ * Github : @pandas-id
  * 
- * Colors
  **/
 
 * {
-    background:     #1E2127FF;
-    background-alt: #282B31FF;
-    foreground:     #FFFFFFFF;
-    selected:       #61AFEFFF;
-    active:         #98C379FF;
-    urgent:         #E06C75FF;
+  background:     #282c34;
+  background-alt: #21252b;
+  foreground:     #fffefe;
+  selected:       #61afef;
+  active:         #98c379;
+  urgent:         #e06c75;
 }

@@ -18,6 +18,8 @@ configuration {
 	icon-theme: "Papirus";
 	steal-focus: false;
 
+  font: "Iosevka Nerd Font 10";
+
 	/*---------- Matching setting ----------*/
 	matching: "normal";
 	tokenize: true;
@@ -57,3 +59,4 @@ configuration {
       delay:  0;
     }
 }
+
