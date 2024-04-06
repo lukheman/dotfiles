@@ -12,6 +12,7 @@
     ],
     "modules-right": [
       "tray",
+      "custom/cliphist",
       "memory",
       "network",
       "pulseaudio",
@@ -91,7 +92,7 @@
     },
     "custom/logo": {
       "format": "  ",
-      // "tooltip": false,
+      "tooltip": false,
       // "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
     },
     "battery": {
@@ -131,8 +132,13 @@
       "tooltip": false
     },
     "custom/power": {
-      "format": "󰤆",
+      "format": "",
       "tooltip": false,
       "on-click": "~/.config/rofi/powermenu/powermenu.sh &"
+    },
+    "custom/cliphist": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "~/.config/rofi/cliphist/cliphist.sh &"
     }
 }
