@@ -19,8 +19,8 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
+    location:                    northeast;
+    anchor:                      northeast;
     fullscreen:                  false;
     width:                       350px;
     x-offset:                    0px;
@@ -47,7 +47,7 @@ mainbox {
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
