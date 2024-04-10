@@ -6,13 +6,15 @@
 
 
 exec_always nm-applet
-# exec_always killall swaybg && swaybg -i ~/.config/wallpapers/astronaut.png
 exec_always dunst
+exec_always wl-paste --watch cliphist store
 
 gaps inner 5
 gaps outer 5
 
-# default_border none
+font pango:IosevkaTerm Nerd Font Mono 10
+
+default_border pixel 2
 # border focused #ffffff
 
 ### Variables
@@ -68,6 +70,8 @@ output * bg ~/.config/wallpapers/black-little-cat.jpg fill
       tap enabled
       natural_scroll enabled
       middle_emulation enabled
+      accel_profile "adaptive"
+      pointer_accel 0.33
   }
 
 
@@ -76,6 +80,7 @@ output * bg ~/.config/wallpapers/black-little-cat.jpg fill
 
 for_window [class="Geeqie"] floating enable
 for_window [app_id="blueman-manager"] floating enable, resize set 400px 400px, move position cursor
+for_window [all] opacity 0.93
 
 ### Key bindings
 #
@@ -85,7 +90,7 @@ for_window [app_id="blueman-manager"] floating enable, resize set 400px 400px, m
     bindsym $mod+a exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     # bindsym $mod+d exec $menu
@@ -177,7 +182,7 @@ for_window [app_id="blueman-manager"] floating enable, resize set 400px 400px, m
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+q fullscreen
+    bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     # bindsym $mod+Shift+space floating toggle
@@ -192,6 +197,8 @@ for_window [app_id="blueman-manager"] floating enable, resize set 400px 400px, m
 # Screenshot
 
 bindsym $mod+Print exec ~/.config/scripts/screenshot.sh full
+bindsym $mod+Shift+Print exec ~/.config/scripts/screenshot.sh select
+bindsym $mod+F12 exec ~/.config/scripts/screenrecord.sh full
 #
 # Scratchpad:
 #
