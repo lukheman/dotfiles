@@ -36,6 +36,7 @@ export EDITOR="nvim"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="exa --icons=always --color=always"
 alias c="clear"
 alias vi="nvim"
 alias viconf="cd ~/.config/nvim"
