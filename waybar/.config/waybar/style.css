@@ -29,6 +29,7 @@ window#waybar.hidden {
   margin: 6px 3px;
   background-color: #21252b;
   color: #fffefe;
+  border-radius: 5px;
 }
 
 #workspaces button.active {
@@ -65,6 +66,7 @@ window#waybar.hidden {
   padding: 6px 12px;
   background-color: #282c34;
   color: #21252b;
+  border-radius: 5px;
 }
 
 #custom-power {
