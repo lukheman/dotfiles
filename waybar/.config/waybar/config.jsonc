@@ -6,7 +6,8 @@
   "modules-left": [
     "custom/logo",
     "hyprland/workspaces",
-    "sway/workspaces"
+    "sway/workspaces",
+    "sway/window"
   ],
   "modules-center": [
     "clock"
@@ -30,8 +31,17 @@
       "tooltip-format": "{title}"
     },
     "sway/mode": {
-    "format": " {}",
-    "max-length": 50
+      "format": " {}",
+      "max-length": 50
+    },
+    "sway/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "rewrite": {
+       "(.*) - Mozilla Firefox": "🌎 $1",
+       "(.*) - vim": " $1",
+       "(.*) - zsh": " [$1]"
+    }
 },
   "sway/workspaces": {
     "disable-scroll": true,
