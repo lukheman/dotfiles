@@ -78,8 +78,10 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-for_window [class="Geeqie"] floating enable
+for_window [class="Geeqie|Lxappearance"] floating enable
+for_window [app_id="pavucontrol"] floating enable, resize set 800px 400px
 for_window [app_id="blueman-manager"] floating enable, resize set 400px 400px, move position cursor
+# for_window [class="Lxappearance"] floating enable
 for_window [all] opacity 0.93
 
 ### Key bindings
