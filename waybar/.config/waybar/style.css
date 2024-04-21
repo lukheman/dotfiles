@@ -29,7 +29,7 @@ window#waybar.hidden {
   margin: 6px 3px;
   background-color: #21252b;
   color: #fffefe;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 #workspaces button.active {
@@ -64,9 +64,12 @@ window#waybar.hidden {
 #tray {
   margin: 6px 3px;
   padding: 6px 12px;
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: transparent;
   color: #21252b;
-  border-radius: 5px;
+  border: 1px solid #21252b;
+  /* border-radius: 5px; */
+  box-shadow: 0px 30px 0px 0px #21252b;
 }
 
 #custom-power {
@@ -82,60 +85,60 @@ window#waybar.hidden {
   color: #61afef;
 }
 
-#memory {
-  background-color: #d19a66;
-}
-
-#battery {
-  background-color: #98c379;
-}
-
-@keyframes blink {
-  to {
-    background-color: #98c379;
-    color: #21252b;
-  }
-}
-
-#battery.warning,
-#battery.critical,
-#battery.urgent {
-  background-color: #e06c75;
-  color: #21252b;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-#battery.charging {
-  background-color: #a6e3a1;
-}
-
-#backlight {
-  background-color: #fab387;
-}
-
-#pulseaudio {
-  background-color: #e5c07b;
-}
-
-#network {
-  background-color: #94e2d5;
-  padding-right: 17px;
-}
-
-#clock {
-  color: #fffefe;
-}
-
-#custom-power {
-  background-color: #e06c75;
-}
-
-#custom-cliphist {
-  background-color: #abb2bf;
-}
+/* #memory { */
+/*   background-color: #d19a66; */
+/* } */
+/**/
+/* #battery { */
+/*   background-color: #98c379; */
+/* } */
+/**/
+/* @keyframes blink { */
+/*   to { */
+/*     background-color: #98c379; */
+/*     color: #21252b; */
+/*   } */
+/* } */
+/**/
+/* #battery.warning, */
+/* #battery.critical, */
+/* #battery.urgent { */
+/*   background-color: #e06c75; */
+/*   color: #21252b; */
+/*   animation-name: blink; */
+/*   animation-duration: 0.5s; */
+/*   animation-timing-function: linear; */
+/*   animation-iteration-count: infinite; */
+/*   animation-direction: alternate; */
+/* } */
+/* #battery.charging { */
+/*   background-color: #a6e3a1; */
+/* } */
+/**/
+/* #backlight { */
+/*   background-color: #fab387; */
+/* } */
+/**/
+/* #pulseaudio { */
+/*   background-color: #e5c07b; */
+/* } */
+/**/
+/* #network { */
+/*   background-color: #56B6C2; */
+/*   padding-right: 17px; */
+/* } */
+/**/
+/* #clock { */
+/*   color: #fffefe; */
+/* } */
+/**/
+/* #custom-power { */
+/*   background-color: #e06c75; */
+/* } */
+/**/
+/* #custom-cliphist { */
+/*   background-color: #abb2bf; */
+/* } */
 
 
 tooltip {
