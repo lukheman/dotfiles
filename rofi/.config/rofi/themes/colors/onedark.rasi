@@ -11,7 +11,7 @@
 * {
   background:     #282c34;
   background-alt: #21252b;
-  foreground:     #fffefe;
+  foreground:     #abb2bf;
   selected:       #61afef;
   active:         #98c379;
   urgent:         #e06c75;

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-theme="$HOME/.config/rofi/themes/main.rasi"
+theme="$HOME/.config/rofi/launchers/style.rasi"
 
 rofi \
   -show drun \
