@@ -80,12 +80,12 @@ exec swayidle -w \
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+set $floating-default floating enable, resize set 800px 500px
 
-for_window [class="Geeqie|Lxappearance"] floating enable
-for_window [app_id="pavucontrol"] floating enable, resize set 800px 400px
-for_window [app_id="blueman-manager"] floating enable, resize set 400px 400px, move position cursor
-# for_window [class="Lxappearance"] floating enable
+for_window [class="Geeqie|Lxappearance|feh"] $floating-default
+for_window [app_id="pavucontrol|nm-connection-editor|blueman-manager"] $floating-default
 for_window [all] opacity 0.93
+for_window [floating] opacity 1
 
 ### Key bindings
 #
