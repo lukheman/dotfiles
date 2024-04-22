@@ -14,8 +14,11 @@ gaps outer 5
 
 font pango:IosevkaTerm Nerd Font Mono 10
 
-default_border pixel 2
-# border focused #ffffff
+default_border normal
+
+client.focused #21252b #21252b #e3ded3 #21252b
+client.unfocused #21252b #21252b #abb2bf #21252b
+# client.<class> <border> <background> <text> [<indicator> [<child_border>]]
 
 ### Variables
 #
