@@ -19,34 +19,36 @@ window#waybar.hidden {
 
 #workspaces {
   background-color: transparent;
+  margin-left: 7px;
 }
 
 #workspaces button {
   all: initial; /* Remove GTK theme values (waybar #1351) */
   min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-  box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: 0px 30px 0px 0px #21252b;
   padding: 6px 18px;
   margin: 6px 3px;
-  background-color: #21252b;
-  color: #fffefe;
+  /* background-color: #21252b; */
+  background-color: transparent;
+  color: #21252b;
   /* border-radius: 5px; */
+  border: 1px solid #21252b;
 }
 
 #workspaces button.active {
   color: #21252b;
-  background-color: #61afef;
+  background-color: #5c6370;
 }
 
 #workspaces button.focused {
-  color: #21252b;
-  background-color: #61afef;
+  /* background-color: #5c6370; */
+  font-weight: bold;
 }
 
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
   color: #21252b;
-  background-color: #61afef;
 }
 
 #workspaces button.urgent {
@@ -73,7 +75,7 @@ window#waybar.hidden {
 }
 
 #custom-power {
-  margin-right: 6px;
+  margin-right: 10px;
 }
 
 #custom-logo {

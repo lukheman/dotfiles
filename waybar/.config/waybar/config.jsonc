@@ -4,10 +4,9 @@
   "spacing": 0,
   "height": 42,
   "modules-left": [
-    "custom/logo",
-    "hyprland/workspaces",
-    "sway/workspaces",
-    "sway/window"
+    // "hyprland/workspaces",
+    "sway/workspaces"
+    // "sway/window"
   ],
   "modules-center": [
     "clock"
