@@ -204,6 +204,7 @@ for_window [floating] opacity 1
 bindsym $mod+Print exec ~/.config/scripts/screenshot.sh full
 bindsym $mod+Shift+Print exec ~/.config/scripts/screenshot.sh select
 bindsym $mod+F12 exec ~/.config/scripts/screenrecord.sh full
+bindsym $mod+P exec ~/.config/rofi/cliphist/cliphist.sh
 #
 # Scratchpad:
 #

@@ -1,7 +1,10 @@
 @import "~/.config/rofi/themes/main.rasi"
 
 window {
-  location: northeast;
+  // location: northeast;
+  anchor:                      northeast;
+  x-offset:                    -10px;
+  y-offset:                    10px;
 }
 
 element-icon {

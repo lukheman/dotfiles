@@ -7,10 +7,11 @@ echo $filepath
 
 if [[ $1 == "full" ]]; then
   grim -l 1 $filepath
-  swappy $filepath
+  swappy -f $filepath
   wl-copy $filepath
 elif [[ $1 == "select" ]]; then
   grim -l 1 -g "$(slurp)" $filepath
+  swappy -f $filepath
   wl-copy $filepath
 fi
 
