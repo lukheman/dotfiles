@@ -54,10 +54,12 @@ output * bg ~/.config/wallpapers/black-little-cat.jpg fill
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 180 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+
+# exec swayidle -w \
+#          timeout 180 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -74,7 +76,7 @@ exec swayidle -w \
       natural_scroll enabled
       middle_emulation enabled
       accel_profile "adaptive"
-      pointer_accel 0.33
+      pointer_accel 0.34
   }
 
 
@@ -85,6 +87,7 @@ set $floating-default floating enable, resize set 800px 500px
 for_window [class="Geeqie|Lxappearance|feh"] $floating-default
 for_window [app_id="pavucontrol|nm-connection-editor|blueman-manager"] $floating-default
 for_window [all] opacity 0.93
+for_window [app_id="mpv"] opacity 1
 for_window [floating] opacity 1
 
 ### Key bindings
