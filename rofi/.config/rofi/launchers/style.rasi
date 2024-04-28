@@ -1,15 +1,3 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Modified : Akmal
- * Github : @pandas-id
- *
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 @import                          "colors.rasi"
 @import "~/.config/rofi/themes/main.rasi"
 
@@ -20,4 +8,3 @@ configuration {
   display-drun:               "";
 	drun-display-format:        "{name}";
 }
-
