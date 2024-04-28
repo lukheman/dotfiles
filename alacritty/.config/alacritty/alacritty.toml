@@ -27,7 +27,7 @@ background = "#282c34"
 # foreground = "#ebdbb2"
 
 [cursor.style]
-shape = "Beam"
+shape = "Block"
 
 [env]
 TERM = "xterm-256color"
