@@ -90,6 +90,8 @@ for_window [all] opacity 0.93
 for_window [app_id="mpv"] opacity 1
 for_window [floating] opacity 1
 
+seat * hide_cursor 5000
+
 ### Key bindings
 #
 # Basics:
@@ -208,6 +210,7 @@ bindsym $mod+Print exec ~/.config/scripts/screenshot.sh full
 bindsym $mod+Shift+Print exec ~/.config/scripts/screenshot.sh select
 bindsym $mod+F12 exec ~/.config/scripts/screenrecord.sh full
 bindsym $mod+P exec ~/.config/rofi/cliphist/cliphist.sh
+bindsym $mod+I exec ~/.config/rofi/translate/translate.sh
 #
 # Scratchpad:
 #
