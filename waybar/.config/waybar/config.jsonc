@@ -5,7 +5,8 @@
   "height": 42,
   "modules-left": [
     // "custom/logo",
-    "sway/workspaces"
+    "sway/workspaces",
+    "sway/window"
   ],
   "modules-center": [
     "clock"
@@ -34,11 +35,11 @@
   },
   "sway/window": {
     "format": "{title}",
-    "max-length": 50,
+    "max-length": 20,
     "rewrite": {
-      "(.*) - Mozilla Firefox": "🌎 $1",
-      "(.*) - nvim": " $1",
-      "(.*) - zsh": " [$1]"
+      // "(.*) - firefox": "🌎 $1",
+      // "(.*) - nvim": " $1",
+      // "(.*) - zsh": " [$1]"
     }
   },
   "sway/workspaces": {
@@ -132,6 +133,7 @@
       ]
     },
     "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
     "scroll-step": 1
   },
   "custom/logo": {
