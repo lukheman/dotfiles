@@ -6,20 +6,21 @@ configuration {
 }
 
 window {
-    transparency: "real";
-    location: center;
-    anchor: center;
-    fullscreen: false;
-    width: 400px;
-    y-offset: 0px;
-    x-offset: 0px;
-    background-color: @background;
-    text-color: @foreground;
-    margin: 0px;
-    padding:          0px;
-    enabled: true;
-    // border: 1px solid;
-    // border-color: @background-alt;
+  font: "IosevkaTerm Nerd Font Mono 10";
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 400px;
+  y-offset: 0px;
+  x-offset: 0px;
+  background-color: @background;
+  text-color: @foreground;
+  margin: 0px;
+  padding:          0px;
+  enabled: true;
+  // border: 1px solid;
+  // border-color: @background-alt;
 }
 
 mainbox {

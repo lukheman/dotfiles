@@ -1,12 +1,5 @@
 @import "~/.config/rofi/themes/main.rasi"
 
-window {
-  // location: northeast;
-  anchor:                      northeast;
-  x-offset:                    -10px;
-  y-offset:                    10px;
-}
-
 mainbox {
   padding: 5px;
   children: ["inputbar", "message"];
