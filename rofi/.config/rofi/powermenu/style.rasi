@@ -1,44 +1,43 @@
 @theme "~/.config/rofi/themes/main.rasi"
 
 configuration {
-    show-icons:                 false;
+  show-icons:                 false;
 }
-
 window {
-    location:                    northeast;
-    anchor:                      northeast;
-    x-offset:                    -10px;
-    y-offset:                    10px;
+  location:                    northeast;
+  anchor:                      northeast;
+  x-offset:                    -10px;
+  y-offset:                    60px;
 }
 
 mainbox {
   padding: 10px;
-  children:                    [ "message", "listview" ];
+  children: [ "message", "listview" ];
 }
 
 message {
   margin: 5px;
-    enabled:                     true;
-    padding:                     8px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+  enabled: true;
+  padding: 8px;
+  border:                      0px solid;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            @background-alt;
+  text-color:                  @foreground;
 }
 
 textbox {
-    background-color:            inherit;
-    text-color:                  inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-    placeholder-color:           @foreground;
+  background-color:            inherit;
+  text-color:                  inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+  placeholder-color:           @foreground;
 }
 error-message {
-    padding:                     8px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
+  padding:                     8px;
+  border:                      0px solid;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            @background;
+  text-color:                  @foreground;
 }
