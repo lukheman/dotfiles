@@ -85,7 +85,7 @@ output * bg ~/.config/wallpapers/black-little-cat.jpg fill
 set $floating-default floating enable, resize set 800px 500px
 
 for_window [class="Geeqie|Lxappearance|feh"] $floating-default
-for_window [app_id="pavucontrol|nm-connection-editor|blueman-manager"] $floating-default
+for_window [app_id="pavucontrol|nm-connection-editor|blueman-manager|nemo"] $floating-default
 for_window [all] opacity 0.93
 for_window [app_id="mpv"] opacity 1
 for_window [floating] opacity 1
@@ -211,6 +211,7 @@ bindsym $mod+Shift+Print exec ~/.config/scripts/screenshot.sh select
 bindsym $mod+F12 exec ~/.config/scripts/screenrecord.sh full
 bindsym $mod+P exec ~/.config/rofi/cliphist/cliphist.sh
 bindsym $mod+I exec ~/.config/rofi/translate/translate.sh
+bindsym $mod+M exec nemo
 #
 # Scratchpad:
 #
