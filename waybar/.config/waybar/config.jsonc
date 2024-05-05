@@ -14,7 +14,7 @@
   "modules-right": [
     "sway/mode",
     "tray",
-    "custom/cliphist",
+    // "custom/cliphist",
     "network",
     "memory",
     "pulseaudio",
@@ -95,8 +95,8 @@
   },
   "clock": {
     "tooltip-format": "<tt>{calendar}</tt>",
-    "format-alt": "  {:%a, %d %b %Y}",
-    "format": "  {:%I:%M %p}"
+    "format-alt": " {:%a, %d %b %Y}",
+    "format": " {:%I:%M %p}"
   },
   "network": {
     "format-wifi": "{icon} {essid}",
