@@ -1,4 +1,4 @@
-@import "~/.config/rofi/themes/main.rasi"
+@theme "~/.config/rofi/themes/main.rasi"
 
 mainbox {
   padding: 5px;
