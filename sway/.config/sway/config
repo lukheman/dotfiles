@@ -1,23 +1,18 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
-
 exec_always nm-applet
 exec_always dunst
 exec_always wl-paste --watch cliphist store
+exec_always ~/.config/scripts/wallpapers.sh
 
 gaps inner 5
 gaps outer 5
 
 font pango:IosevkaTerm Nerd Font Mono 10
 
-default_border normal
+default_border pixel 2
 
-client.focused #21252b #21252b #e3ded3 #21252b
-client.unfocused #21252b #21252b #abb2bf #21252b
+# client.focused #21252b #21252b #e3ded3 #21252b
+client.focused #abb2bf #5c6370 #21252b #5c6370 
+# client.unfocused #21252b #21252b #abb2bf #21252b
 # client.<class> <border> <background> <text> [<indicator> [<child_border>]]
 
 ### Variables
@@ -34,15 +29,13 @@ set $right l
 set $term alacritty
 
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $menu ~/.config/rofi/launchers/launcher.sh
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.config/wallpapers/black-little-cat.jpg fill
+# output * bg ~/.config/wallpapers/b-050.jpg fill
+
 #
 # Example configuration:
 #
@@ -76,7 +69,7 @@ output * bg ~/.config/wallpapers/black-little-cat.jpg fill
       natural_scroll enabled
       middle_emulation enabled
       accel_profile "adaptive"
-      pointer_accel 0.34
+      pointer_accel 0.35
   }
 
 
@@ -96,6 +89,8 @@ seat * hide_cursor 5000
 #
 # Basics:
 #
+    # filemanager
+
     # Start a terminal
     bindsym $mod+a exec $term
 
@@ -108,7 +103,7 @@ seat * hide_cursor 5000
 
     bindsym $mod+tab exec rofi -show window
 
-    # bindsym $mod+return exec ~/.config/rofi/powermenu/powermenu.sh
+    bindsym $mod+return exec ~/.config/rofi/powermenu/powermenu.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
