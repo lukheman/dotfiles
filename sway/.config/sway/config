@@ -53,10 +53,11 @@ set $menu ~/.config/rofi/launchers/launcher.sh
 #          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
 
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+         timeout 180 'systemctl suspend'
+         # timeout 10 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         # before-sleep 'swaylock -f -c 000000'
+
 
 ### Input configuration
 #
@@ -207,7 +208,7 @@ bindsym $mod+F12 exec ~/.config/scripts/screenrecord.sh full
 bindsym $mod+P exec ~/.config/rofi/cliphist/cliphist.sh
 bindsym $mod+I exec ~/.config/rofi/translate/translate.sh
 bindsym $mod+M exec nemo
-#
+
 # Scratchpad:
 #
     # Sway has a "scratchpad", which is a bag of holding for windows.
