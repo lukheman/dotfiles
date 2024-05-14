@@ -6,7 +6,7 @@ configuration {
 }
 
 window {
-  font: "IosevkaTerm Nerd Font Mono 10";
+  font: "IosevkaTerm Nerd Font Propo 11";
   transparency: "real";
   location: center;
   anchor: center;
