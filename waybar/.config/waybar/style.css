@@ -1,14 +1,27 @@
+/* black:          #21252b; */
+/* red:            #e06c75; */
+/* green:          #98c379; */
+/* blue:           #61afef; */
+/* grey:           #5c6370; */
+/* orange:         #d19a66; */
+/* yellow:         #e5c07b; */
+/* cyan:           #56b6c2; */
+/* purple:         #c678dd; */
+/* white:          #fffefe; */
+/* background:     #282c34; */
+/* foreground:     #abb2bf; */
+
+
 * {
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: Material Design Icons, IosevkaTerm Nerd Font Mono;
+  font-family: Material Design Icons, IosevkaTerm Nerd Font Propo;
   font-size: 14px;
 }
 
 window#waybar {
-  /* background-color: #282c34; */
-  background-color: transparent;
+  background-color: #282c34;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -25,24 +38,16 @@ window#waybar.hidden {
 #workspaces button {
   all: initial; /* Remove GTK theme values (waybar #1351) */
   min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-  box-shadow: 0px 30px 0px 0px #21252b;
-  padding: 6px 18px;
-  margin: 6px 3px;
-  /* background-color: transparent; */
-  color: #21252b;
-  border: 1px solid #21252b;
+  padding: 6px 14px;
+  color: #5c6370;
 }
 
 #workspaces button.focused {
-  color: #21252b;
-  font-weight: bold;
+  color: #5c6370;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  box-shadow: 0px 30px 0px 0px #21252b;
-  color: #21252b;
-  background-color: transparent;
+  color: #5c6370;
 }
 
 #workspaces button.urgent {
@@ -57,17 +62,17 @@ window#waybar.hidden {
 #pulseaudio,
 #network,
 #clock,
+#mode,
 #tray {
-  margin: 6px 3px;
+  /* margin: 6px 3px; */
   padding: 6px 12px;
   background-color: transparent;
-  color: #21252b;
-  border: 1px solid #21252b;
-  box-shadow: 0px 30px 0px 0px #21252b;
+  color: #5c6370;
 }
 
 #custom-power {
   margin-right: 10px;
+  color: #e06c75;
 }
 
 #custom-logo {
@@ -78,62 +83,6 @@ window#waybar.hidden {
   border-radius: 8px 0px 0px 8px;
   color: #61afef;
 }
-
-/* #memory { */
-/*   background-color: #d19a66; */
-/* } */
-/**/
-/* #battery { */
-/*   background-color: #98c379; */
-/* } */
-/**/
-/* @keyframes blink { */
-/*   to { */
-/*     background-color: #98c379; */
-/*     color: #21252b; */
-/*   } */
-/* } */
-/**/
-/* #battery.warning, */
-/* #battery.critical, */
-/* #battery.urgent { */
-/*   background-color: #e06c75; */
-/*   color: #21252b; */
-/*   animation-name: blink; */
-/*   animation-duration: 0.5s; */
-/*   animation-timing-function: linear; */
-/*   animation-iteration-count: infinite; */
-/*   animation-direction: alternate; */
-/* } */
-/* #battery.charging { */
-/*   background-color: #a6e3a1; */
-/* } */
-/**/
-/* #backlight { */
-/*   background-color: #fab387; */
-/* } */
-/**/
-/* #pulseaudio { */
-/*   background-color: #e5c07b; */
-/* } */
-/**/
-/* #network { */
-/*   background-color: #56B6C2; */
-/*   padding-right: 17px; */
-/* } */
-/**/
-/* #clock { */
-/*   color: #fffefe; */
-/* } */
-/**/
-/* #custom-power { */
-/*   background-color: #e06c75; */
-/* } */
-/**/
-/* #custom-cliphist { */
-/*   background-color: #abb2bf; */
-/* } */
-
 
 tooltip {
   padding: 15px;

@@ -1,12 +1,12 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "spacing": 0,
-  "height": 30,
+  "height": 42,
   "modules-left": [
     // "custom/logo",
-    "sway/workspaces"
-    // "sway/window"
+    "sway/workspaces",
+    "sway/window"
   ],
   "modules-center": [
     "clock"
