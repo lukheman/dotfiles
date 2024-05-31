@@ -36,19 +36,19 @@ TERM = "xterm-256color"
 size = 13.0
 
 [font.bold]
-family = "IosevkaTerm Nerd Font Mono"
+family = "IosevkaMayukaiCodepro Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaTerm Nerd Font Mono"
+family = "IosevkaMayukaiCodepro Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "IosevkaTerm Nerd Font Mono"
+family = "IosevkaMayukaiCodepro Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "IosevkaTerm Nerd Font Mono"
+family = "IosevkaMayukaiCodepro Nerd Font Mono"
 style = "Regular"
 
 [window]
