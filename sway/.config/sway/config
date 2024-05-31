@@ -3,8 +3,8 @@ exec_always dunst
 exec_always wl-paste --watch cliphist store
 exec_always ~/.config/scripts/wallpapers.sh
 
-gaps inner 5
-gaps outer 5
+# gaps inner 5
+# gaps outer 5
 
 font pango:IosevkaTerm Nerd Font Mono 10
 
@@ -54,7 +54,7 @@ set $menu ~/.config/rofi/launchers/launcher.sh
 #          before-sleep 'swaylock -f -c 000000'
 
 exec swayidle -w \
-         timeout 180 'systemctl suspend'
+         timeout 300 'systemctl suspend'
          # timeout 10 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          # before-sleep 'swaylock -f -c 000000'
 
