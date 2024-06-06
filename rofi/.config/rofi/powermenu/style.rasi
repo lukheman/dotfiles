@@ -5,10 +5,10 @@ configuration {
 
 }
 window {
-  location:                    northeast;
-  anchor:                      northeast;
+  location:                    southeast;
+  anchor:                      southeast;
   x-offset:                    -10px;
-  y-offset:                    52px;
+  y-offset:                    -40px;
 }
 
 mainbox {
@@ -19,8 +19,8 @@ message {
   enabled: true;
   padding: 10px;
   border-color:                @blue;
-  background-color:            @green;
-  text-color:                  @black;
+  background-color:            @background;
+  text-color:                  @foreground;
 }
 
 textbox {
