@@ -3,15 +3,15 @@ exec_always dunst
 exec_always wl-paste --watch cliphist store
 exec_always ~/.config/scripts/wallpapers.sh
 
-# gaps inner 5
-# gaps outer 5
+gaps inner 5
+gaps outer 5
 
 font pango:IosevkaTerm Nerd Font Mono 10
 
 default_border pixel 2
 
 # client.focused #21252b #21252b #e3ded3 #21252b
-client.focused #abb2bf #5c6370 #21252b #5c6370 
+client.focused #abb2bf #5c6370 #21252b #5c6370
 # client.unfocused #21252b #21252b #abb2bf #21252b
 # client.<class> <border> <background> <text> [<indicator> [<child_border>]]
 
