@@ -5,11 +5,11 @@
 configuration {
 	modi:                       "drun";
   show-icons:                 false;
-  display-drun:               "";
+  // display-drun:               "";
 	drun-display-format:        "{name}";
 }
 
 listview {
-  columns: 2;
-  lines: 1;
+  columns: 1;
+  lines: 5;
 }
