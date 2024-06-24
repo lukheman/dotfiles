@@ -4,7 +4,7 @@
 # end
 
 function fzf_tmux
-    set selected_dir (fd --type d --hidden --follow --exclude .git . $HOME | fzf --height 40% --reverse --border)
+    set selected_dir (fd --type d --hidden --follow --exclude .git --exclude env . $HOME | fzf --height 40% --reverse --border)
     if test -n "$selected_dir"
         set session_name (basename "$selected_dir")
 
