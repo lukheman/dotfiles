@@ -12,6 +12,5 @@ translate=$(trans en:id -b "${text}")
 if [[ -n $translate ]]; then
   rofi -dmenu \
     -mesg "${translate}" \
-    -theme-str 'mainbox {children: [ "message" ];}' \
     -theme ~/.config/rofi/translate/style.rasi
 fi
