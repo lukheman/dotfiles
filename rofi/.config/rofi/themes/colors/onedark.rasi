@@ -11,5 +11,5 @@
   white:          #fffefe;
   background:     #282c34;
   foreground:     #abb2bf;
-	bg1: #31353f;
+	bg1:            #31353f;
 }
