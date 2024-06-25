@@ -10,13 +10,7 @@ function fzf_tmux
 
         # Check if running inside tmux
         if test -n "$TMUX"
-          cd "$selected_dir"
-          # if tmux list-windows -F "#{window_name}" | grep -q "^$window_name\$"
-          #   tmux select-window -t "$window_name"
-          # else
-          #     # tmux new-window -c "$selected_dir" -n "$window_name"
-          #   tmux new-window -c "$selected_dir"
-          # end
+          tmux new-window -c "$selected_dir" -n "$window_name"
         else
           tmux new-session -s "$session_name" -c "$selected_dir"
         end
@@ -30,14 +24,17 @@ function fzf_open_with_editor
     end
 end
 
+export EDITOR="nvim"
+
+set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
+
 # Binding Ctrl+F to the fzf_tmux function
 alias f=fzf_tmux
 alias ff=fzf_open_with_editor
 
-export EDITOR="nvim"
-
 # general
-alias ls="exa"
+alias ls="exa --icons --sort type"
+alias lsa="ls -a"
 alias cat="bat"
 
 # config
