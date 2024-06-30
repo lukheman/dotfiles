@@ -47,4 +47,8 @@ alias hx="helix"
 # git
 alias gst="git status"
 
+# translate shell
+alias trid="trans en:id"
+alias tred="trans id:ed"
+
 starship init fish | source
