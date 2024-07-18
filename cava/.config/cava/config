@@ -5,7 +5,7 @@
 [general]
 
 # Smoothing mode. Can be 'normal', 'scientific' or 'waves'. DEPRECATED as of 0.6.0
-; mode = normal
+mode = scientific
 
 # Accepts only non-negative values.
 ; framerate = 60
@@ -23,8 +23,8 @@
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
 ; bars = 0
-; bar_width = 2
-; bar_spacing = 1
+; bar_width = 3
+; bar_spacing = 3
 # bar_height is only used for output in "noritake" format
 ; bar_height = 32
 
@@ -33,8 +33,8 @@
 ; bar_spacing = 5
 
 # sdl_glsl have these default values, they are only used to calulate max number of bars.
-; bar_width = 1
-; bar_spacing = 0
+bar_width = 1
+bar_spacing = 0
 
 
 # Lower and higher cutoff frequencies for lowest and highest bars
@@ -215,14 +215,16 @@
 
 # SDL and sdl_glsl only support hex code colors, these are the default:
 ; background = '#111111'
-; foreground = '#33ffff'
+foreground = '#e06c75'
 
 
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
-; gradient = 0
-; gradient_count = 8
+# gradient = 1
+# gradient_count = 2
+# gradient_color_1 = '#e06c75'
+# gradient_color_2 = '#98c379'
 ; gradient_color_1 = '#59cc33'
 ; gradient_color_2 = '#80cc33'
 ; gradient_color_3 = '#a6cc33'
@@ -248,7 +250,7 @@
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
 # DEPRECATED as of 0.8.0, use noise_reduction instead
-; gravity = 100
+gravity = 50
 
 
 # In bar height, bars that would have been lower that this will not be drawn.
