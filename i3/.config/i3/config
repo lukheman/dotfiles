@@ -1,16 +1,11 @@
-# exec_always --no-startup-id feh --bg-fill $HOME/Downloads/breathtaking-shot-beautiful-stones-turquoise-water-lake-hills-background.jpg
-exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/1347028.jpeg
+exec_always --no-startup-id $HOME/.fehbg
 
-exec_always --no-startup-id $HOME/.config/polybar/blocks/launch.sh
+exec_always --no-startup-id polybar --reload -c $HOME/.config/polybar/config.ini
 
 exec_always --no-startup-id picom --experimental-backends
 
-# exec --no-startup-id xautolock -time 10 -locker "systemctl suspend"
-exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
-
-
-gaps inner 5
-gaps outer 5
+gaps inner 2
+gaps outer 1
 
 set $mod Mod4
 
@@ -55,10 +50,10 @@ bindsym $mod+x exec --no-startup-id brightnessctl set +5
 # is used in the bar {} block below.
 font pango:IosevkaTerm Nerd Font Mono 10
 
-default_border pixel 1
+default_border pixel 0
 # client.focused #21252b #21252b #e3ded3 #21252b
 # client.focused #abb2bf #5c6370 #21252b #5c6370
-client.focused #e06c75 #e06c75 #21252b #e06c75
+# client.focused #e06c75 #e06c75 #21252b #e06c75
 # client.unfocused #21252b #21252b #abb2bf #21252b
 # client.<class> <border> <background> <text> [<indicator> [<child_border>]]
 
@@ -92,14 +87,13 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
 bindsym $mod+Return exec ~/.config/rofi/powermenu/powermenu.sh
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-set $menu ~/.config/rofi/launchers/launcher.sh
+set $menu ~/.config/rofi/launchers/launcher.sh drun
 # bindsym $mod+space exec --no-startup-id dmenu_run
 bindsym $mod+space exec --no-startup-id $menu
 
