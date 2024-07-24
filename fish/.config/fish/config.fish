@@ -4,7 +4,7 @@
 # end
 
 function fzf_tmux
-    set selected_dir (fd --type d --hidden --follow --exclude .local --exclude .git --exclude .cache --exclude env . $HOME | fzf --reverse)
+    set selected_dir (fd . $HOME/Projects $HOME/dotfiles --type d --hidden | fzf --reverse)
     if test -n "$selected_dir"
         set session_name (basename "$selected_dir")
 
@@ -19,11 +19,15 @@ function fzf_tmux
     end
 end
 
-function fzf_open_with_editor
-    set selected_file (fd --type f --hidden --follow --exclude .git --exclude .local --exclude .cache --exclude env --exclude .ssh . | fzf --reverse --preview="bat --color=always {}")
+function vi
+  if test (count $argv) -eq 0
+    set selected_file (fd --type f --hidden --follow --exclude .git --exclude .local --exclude .cache --exclude env --exclude .ssh --exclude .cargo . | fzf --reverse --preview="bat --color=always {}")
     if test -n "$selected_file"
         $EDITOR "$selected_file"
     end
+  else
+    nvim $argv
+  end
 end
 
 export EDITOR="nvim"
@@ -31,8 +35,7 @@ export EDITOR="nvim"
 set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
 # Binding Ctrl+F to the fzf_tmux function
-alias f=fzf_tmux
-alias ff=fzf_open_with_editor
+alias v=fzf_tmux
 
 # general
 alias ls="exa --icons --sort type"
@@ -44,9 +47,9 @@ alias ncm="ncmpcpp"
 alias viconf="cd ~/.config/nvim"
 
 # text editor
-alias vi="nvim"
+# alias vi="nvim"
 alias hx="helix"
-alias vidb="nvim -c \":Dbee\""
+alias vidb="nvim -c \":DBUI\""
 
 # git
 alias gst="git status"
@@ -56,3 +59,6 @@ alias trid="trans en:id"
 alias tred="trans id:ed"
 
 starship init fish | source
+
+# Created by `pipx` on 2024-07-20 10:24:03
+set PATH $PATH /home/akmal/.local/bin
