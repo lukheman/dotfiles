@@ -33,22 +33,22 @@ shape = "Beam"
 TERM = "xterm-256color"
 
 [font]
-size = 13.0
+size = 12.0
 
 [font.bold]
-family = "IosevkaMayukaiCodepro Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaMayukaiCodepro Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "IosevkaMayukaiCodepro Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "IosevkaMayukaiCodepro Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Regular"
 
 [window]
@@ -56,5 +56,5 @@ dynamic_padding = true
 dynamic_title = true
 
 [window.padding]
-x = 5
-y = 5
+x = 0
+y = 0
