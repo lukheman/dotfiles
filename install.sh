@@ -20,6 +20,7 @@ packages=(
   "xdg-user-dirs"
   "flameshot"
   "feh" "ueberzug"
+  "bluez" "bluez-utils" "blueman"
 )
 
 for item in "${packages[@]}"; do
