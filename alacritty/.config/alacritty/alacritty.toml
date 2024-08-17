@@ -45,6 +45,6 @@ style = "Regular"
 dynamic_padding = true
 dynamic_title = true
 
-[window.padding]
-x = 0
-y = 0
+# [window.padding]
+# x = 0
+# y = 0
