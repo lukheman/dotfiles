@@ -18,5 +18,6 @@ bspc rule -a qutebrowser desktop='^2' follow=on
 # bspc rule -a Screenkey manage=off
 
 polybar &
+dunst &
 nitrogen --restore &
 nm-applet
