@@ -15,6 +15,13 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# brightness
+super + i
+  $HOME/.local/share/scripts/brightness.sh inc
+
+super + o
+  $HOME/.local/share/scripts/brightness.sh dec
+
 #
 # bspwm hotkeys
 #
