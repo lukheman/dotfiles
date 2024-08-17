@@ -22,6 +22,16 @@ super + i
 super + o
   $HOME/.local/share/scripts/brightness.sh dec
 
+# volume
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 # screenshot
 super + w
   flameshot full -p $HOME/Pictures/
