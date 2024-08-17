@@ -6,10 +6,26 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      q: close
+      qa: quit
+      w: session-save
+      wq: quit --save
+      wqa: quit` --save
   auto_save.session:
     global: true
+  bindings.commands:
+    global:
+      normal:
+        J: tab-prev
+        K: tab-next
   downloads.position:
     global: bottom
+  editor.command:
+    global:
+    - nvim
+    - '{file}'
   fonts.default_family:
     global: Iosevka Nerd Font Mono
   statusbar.position:
