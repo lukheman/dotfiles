@@ -39,6 +39,10 @@ super + w
 super + shift + w
   flameshot gui -p $HOME/Pictures/
 
+# switch theme
+super + semicolon
+  $HOME/.local/share/scripts/switch-themes.sh
+
 #
 # bspwm hotkeys
 #
