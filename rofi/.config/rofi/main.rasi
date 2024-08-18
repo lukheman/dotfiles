@@ -1,0 +1,99 @@
+@import "colors.rasi"
+
+// 
+configuration {
+  display-drun: "";
+	drun-display-format: "{name}";
+}
+
+window {
+  font: "Iosevka Nerd Font Mono 11";
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 400px;
+  y-offset: 0px;
+  x-offset: 0px;
+  background-color: @background;
+  text-color: @foreground;
+  margin: 0px;
+  padding:          0px;
+  enabled: true;
+  border: 2px solid;
+  border-color: @foreground;
+}
+
+mainbox {
+  enabled: true;
+  spacing: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px solid;
+  background-color: @background;
+  children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+  enabled: true;
+  background-color: @background;
+  text-color: @foreground;
+  spacing: 5px;
+  margin: 5px;
+  // padding: 10px;
+  children: [ "prompt", "entry"];
+}
+
+prompt {
+  enabled: false;
+  background-color: inherit;
+  text-color: inherit;
+}
+
+entry {
+  enabled: true;
+  background-color: inherit;
+  text-color: inherit;
+  // placeholder: "Search...";
+  margin: 5px;
+  // border: 1px solid;
+  // background-color: @green;
+}
+
+listview {
+  border: 1px solid;
+  background-color: @background;
+  enabled: true;
+  columns: 1;
+  lines: 5;
+  spacing: 5px;
+  margin: 5px;
+  // background-color: @background;
+  text-color: @blue;
+}
+
+element {
+  enabled: true;
+  // spacing: 10px;
+  margin: 5px;
+  // padding: 5px;
+  background-color: @green;
+}
+
+element selected.normal {
+  text-color: @green;
+}
+
+element-icon {
+  background-color: @background;
+  size: 26px;
+}
+
+element-text {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element-text.selected {
+  text-color: @green;
+}
