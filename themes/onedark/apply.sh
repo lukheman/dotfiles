@@ -9,23 +9,23 @@ source "$THEME/palette.bash"
 
 apply_alacritty() {
   cat > "$PATH_CONFIG/alacritty/colors.toml" <<- EOF
-    [colors.primary]
-    background = "${background}"
-    foreground = "${foreground}"
+[colors.primary]
+background = "${background}"
+foreground = "${foreground}"
 
-    [colors.cursor]
-    cursor = "${foreground}"
-    text = "${background}"
+[colors.cursor]
+cursor = "${foreground}"
+text = "${background}"
 
-    [colors.normal]
-    black  = "${black}"
-    white  = "${white}"
-    blue   = "${blue}"
-    cyan   = "${cyan}"
-    green  = "${green}"
-    magenta= "${purple}"
-    red    = "${red}"
-    yellow = "${yellow}"
+[colors.normal]
+black  = "${black}"
+white  = "${white}"
+blue   = "${blue}"
+cyan   = "${cyan}"
+green  = "${green}"
+magenta= "${purple}"
+red    = "${red}"
+yellow = "${yellow}"
 EOF
 }
 
@@ -48,21 +48,40 @@ EOF
 
 apply_polybar() {
   cat > "$PATH_CONFIG/polybar/colors.ini" <<- EOF
-    [colors]
-    background = "${background}"
-    foreground = "${foreground}"
-    black      = "${black}"
-    white      = "${white}"
-    blue       = "${blue}"
-    cyan       = "${cyan}"
-    green      = "${green}"
-    purple     = "${purple}"
-    red        = "${red}"
-    yellow     = "${yellow}"
+[colors]
+background = "${background}"
+foreground = "${foreground}"
+black      = "${black}"
+white      = "${white}"
+blue       = "${blue}"
+cyan       = "${cyan}"
+green      = "${green}"
+purple     = "${purple}"
+red        = "${red}"
+yellow     = "${yellow}"
 EOF
   # cp "$THEME/polybar/colors.ini" "$PATH_CONFIG/polybar/colors.ini"
+}
+
+apply_rofi() {
+
+  cat > "$PATH_CONFIG/rofi/colors.rasi" <<- EOF
+* {
+  background : ${background};
+  foreground : ${foreground};
+  black      : ${black};
+  white      : ${white};
+  blue       : ${blue};
+  cyan       : ${cyan};
+  green      : ${green};
+  purple     : ${purple};
+  red        : ${red};
+  yellow     : ${yellow};
+}
+EOF
 }
 
 apply_alacritty
 apply_tmux
 apply_polybar
+apply_rofi
