@@ -63,6 +63,25 @@ EOF
   # cp "$THEME/polybar/colors.ini" "$PATH_CONFIG/polybar/colors.ini"
 }
 
+apply_rofi() {
+
+  cat > "$PATH_CONFIG/rofi/colors.rasi" <<- EOF
+* {
+  background : ${background};
+  foreground : ${foreground};
+  black      : ${black};
+  white      : ${white};
+  blue       : ${blue};
+  cyan       : ${cyan};
+  green      : ${green};
+  purple     : ${purple};
+  red        : ${red};
+  yellow     : ${yellow};
+}
+EOF
+}
+
 apply_alacritty
 apply_tmux
 apply_polybar
+apply_rofi
