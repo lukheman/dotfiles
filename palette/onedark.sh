@@ -2,7 +2,7 @@
 
 background="#282c34"
 foreground="#abb2bf"
-black="#181a1f"
+black="#21252b"
 white="#fffefe"
 red="#e06c75"
 green="#98c379"
