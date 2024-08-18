@@ -20,6 +20,10 @@ settings:
       normal:
         J: tab-prev
         K: tab-next
+  content.javascript.clipboard:
+    global: access
+  content.javascript.modal_dialog:
+    global: true
   downloads.position:
     global: bottom
   editor.command:
