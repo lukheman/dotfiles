@@ -21,7 +21,7 @@ packages=(
   "flameshot"
   "feh" "ueberzug"
   "bluez" "bluez-utils" "blueman"
-  "pulseaudio"
+  "pipewire"
 )
 
 for item in "${packages[@]}"; do
