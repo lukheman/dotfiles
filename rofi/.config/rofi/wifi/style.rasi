@@ -1,4 +1,4 @@
-@theme "~/.config/rofi/themes/main.rasi"
+@theme "~/.config/rofi/main.rasi"
 
 window {
   location: northeast;

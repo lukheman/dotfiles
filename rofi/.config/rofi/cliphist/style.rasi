@@ -1,4 +1,4 @@
-@import "~/.config/rofi/themes/main.rasi"
+@import "~/.config/rofi/main.rasi"
 
 element-icon {
   enabled: false;
