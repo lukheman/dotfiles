@@ -19,7 +19,7 @@ function fzf_tmux
     end
 end
 
-function vi
+function f
   if test (count $argv) -eq 0
     set selected_file (fd --type f --hidden --follow --exclude .git --exclude .local --exclude .cache --exclude env --exclude .ssh --exclude .cargo . | fzf --reverse --preview="bat --color=always {}")
     if test -n "$selected_file"
@@ -31,6 +31,7 @@ function vi
 end
 
 export EDITOR="nvim"
+export DESKTOP_SESSION="bspwm"
 
 set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
@@ -40,14 +41,14 @@ alias v=fzf_tmux
 # general
 alias ls="exa --icons --sort type"
 alias lsa="ls -a"
-alias cat="bat"
+# alias cat="bat"
 alias ncm="ncmpcpp"
 
 # config
 alias viconf="cd ~/.config/nvim"
 
 # text editor
-# alias vi="nvim"
+alias vi="nvim"
 alias hx="helix"
 alias vidb="nvim -c \":DBUI\""
 
