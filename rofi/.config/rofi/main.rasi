@@ -2,8 +2,10 @@
 
 // 
 configuration {
+	modi: "drun";
   display-drun: "";
 	drun-display-format: "{name}";
+  show-icons: false;
 }
 
 window {
@@ -18,7 +20,7 @@ window {
   background-color: @background;
   text-color: @foreground;
   margin: 0px;
-  padding:          0px;
+  padding: 0px;
   enabled: true;
   border: 2px solid;
   border-color: @foreground;
