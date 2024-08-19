@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
+theme=$(ls $HOME/dotfiles/themes | rofi -dmenu -theme ~/.config/rofi/main.rasi)
 
-themes=$(echo -e "onedark\nsolarized" | rofi -dmenu -theme ~/.config/rofi/main.rasi)
+if [[ -n $theme ]]; then
+  bash "$HOME/dotfiles/themes/$theme/apply.sh"
+fi
 
-bash "$HOME/dotfiles/themes/$themes/apply.sh"
