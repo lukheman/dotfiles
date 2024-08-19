@@ -18,3 +18,4 @@ polybar -r &
 dunst &
 nitrogen --restore &
 nm-applet &
+picom -b
