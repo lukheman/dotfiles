@@ -21,7 +21,8 @@ packages=(
   "flameshot"
   "feh" "ueberzug"
   "bluez" "bluez-utils" "blueman"
-  "pipewire"
+  "pipewire" "pipewire-pulse"
+  "pyright"
 )
 
 for item in "${packages[@]}"; do
