@@ -12,6 +12,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a qutebrowser desktop='^2' follow=on
+bspc rule -a firefox desktop='^2' follow=on
 
 killall polybar
 polybar -r &
