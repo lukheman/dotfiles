@@ -67,6 +67,9 @@ super + y
 super + g
 	bspc node -s biggest.window
 
+super + p
+  $HOME/.local/share/scripts/translate.sh
+
 #
 # state/flags
 #
