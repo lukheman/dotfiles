@@ -37,6 +37,7 @@ set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
 # Binding Ctrl+F to the fzf_tmux function
 alias v=fzf_tmux
+alias py=python
 
 # general
 alias ls="exa --icons --sort type"
