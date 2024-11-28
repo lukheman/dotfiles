@@ -1,4 +1,3 @@
-import = ["~/.config/alacritty/colors.toml"]
 
 
 [cursor.style]
@@ -29,6 +28,9 @@ style = "Regular"
 [window]
 dynamic_padding = true
 dynamic_title = true
+
+[general]
+import = ["~/.config/alacritty/colors.toml"]
 
 # [window.padding]
 # x = 0
