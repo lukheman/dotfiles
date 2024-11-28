@@ -1,12 +1,12 @@
 * {
-  background : #fdf6e3;
-  foreground : #586e75;
-  black      : #073642;
-  white      : #eee8d5;
-  blue       : #268bd2;
-  cyan       : #2aa198;
-  green      : #859900;
-  purple     : #d33682;
-  red        : #dc322f;
-  yellow     : #b58900;
+  background : #141b1e;
+  foreground : #dadada;
+  black      : #232a2d;
+  white      : #dadada;
+  blue       : #67b0e8;
+  cyan       : #6cbfbf;
+  green      : #8ccf7e;
+  purple     : #c47fd5;
+  red        : #e57474;
+  yellow     : #e5c76b;
 }
