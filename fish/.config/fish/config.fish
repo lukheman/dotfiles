@@ -3,20 +3,17 @@
 #     exec tmux
 # end
 
-function fzf_tmux
-    set selected_dir (fd . $HOME/Projects $HOME/dotfiles --type d --hidden | fzf --reverse)
-    if test -n "$selected_dir"
-        set session_name (basename "$selected_dir")
+function open_project
+  # Gunakan fd untuk mencari direktori di tingkat pertama dalam folder Code
+  set selected_project (fd . $HOME/Code/ --type d -d 1 | fzf --reverse)
 
-        # Check if running inside tmux
-        if test -n "$TMUX"
-          # tmux new-window -c "$selected_dir" -n "$window_name"
-          cd "$selected_dir"
-        else
-          tmux kill-server
-          tmux new-session -s "$session_name" -c "$selected_dir"
-        end
-    end
+  # Periksa apakah selected_project tidak kosong sebelum pindah direktori
+  if test -n "$selected_project"
+    cd "$selected_project"
+    echo "Berada di directory: $selected_project"
+  else
+    echo "Tidak ada directory yang dipilih."
+  end
 end
 
 function f
@@ -32,11 +29,11 @@ end
 
 export EDITOR="nvim"
 export DESKTOP_SESSION="bspwm"
+export TMUXP_CONFIGDIR=$HOME/.tmuxp
 
 set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
-# Binding Ctrl+F to the fzf_tmux function
-alias v=fzf_tmux
+alias op=open_project
 alias py=python
 
 # general
