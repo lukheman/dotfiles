@@ -58,6 +58,7 @@ alias trid="trans en:id"
 alias tred="trans id:ed"
 
 starship init fish | source
+atuin init fish | source
 
 # Created by `pipx` on 2024-07-20 10:24:03
 set PATH $PATH /home/akmal/.local/bin
