@@ -11,12 +11,17 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a '*' state=floating rectangle=800x600+100+100
+bspc rule -a Alacritty desktop='^1' follow=on state=floating
 bspc rule -a qutebrowser desktop='^2' follow=on
 bspc rule -a firefox desktop='^2' follow=on
 bspc rule -a Brave-browser desktop='^2' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
+bspc rule -a Nemo desktop='^3' follow=on
 bspc rule -a libreoffice-startcenter desktop='^4' follow=on
+bspc rule -a obs desktop='^3' follow=on
+bspc rule -a Blueberry.py state=floating
+bspc rule -a obsidian desktop='^4' follow=on state=tiled
 
 killall polybar
 polybar -r &
