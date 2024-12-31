@@ -22,7 +22,7 @@ window {
   margin: 0px;
   padding: 0px;
   enabled: true;
-  border: 2px solid;
+  // border: 2px solid;
   border-color: @foreground;
 }
 
@@ -69,7 +69,7 @@ listview {
   columns: 1;
   lines: 5;
   spacing: 5px;
-  margin: 5px;
+  margin: 10px;
   // background-color: @background;
   text-color: @blue;
 }
@@ -77,7 +77,7 @@ listview {
 element {
   enabled: true;
   // spacing: 10px;
-  margin: 5px;
+  margin: 0;
   // padding: 5px;
   background-color: @green;
 }
@@ -94,8 +94,10 @@ element-icon {
 element-text {
   background-color: @background;
   text-color: @foreground;
+  padding: 5px;
 }
 
 element-text.selected {
-  text-color: @green;
+  text-color: @background;
+  background-color: @green;
 }
