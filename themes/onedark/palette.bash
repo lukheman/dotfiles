@@ -3,7 +3,7 @@
 background="#282c34"
 foreground="#abb2bf"
 black="#21252b"
-white="#fffefe"
+white="#dcdfe4"
 red="#e06c75"
 green="#98c379"
 blue="#61afef"
