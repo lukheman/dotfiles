@@ -33,6 +33,10 @@ export TMUXP_CONFIGDIR=$HOME/.tmuxp
 
 set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
+# nvm
+set -x NVM_DIR $HOME/.nvm
+set -x PATH $NVM_DIR/bin $PATH
+
 alias op=open_project
 alias py=python
 
@@ -47,6 +51,7 @@ alias viconf="cd ~/.config/nvim"
 
 # text editor
 alias vi="nvim"
+alias vihb="nvim -c \"colorscheme habamax\""
 alias hx="helix"
 alias vidb="nvim -c \":DBUI\""
 
@@ -59,6 +64,7 @@ alias tred="trans id:ed"
 
 starship init fish | source
 atuin init fish | source
+
 
 # Created by `pipx` on 2024-07-20 10:24:03
 set PATH $PATH /home/akmal/.local/bin
