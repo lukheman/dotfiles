@@ -1,7 +1,7 @@
 
 
 [cursor.style]
-shape = "Beam"
+shape = "Block"
 
 [env]
 TERM = "xterm-256color"
@@ -32,6 +32,6 @@ dynamic_title = true
 [general]
 import = ["~/.config/alacritty/colors.toml"]
 
-# [window.padding]
-# x = 0
-# y = 0
+[window.padding]
+x = 5
+y = 5
