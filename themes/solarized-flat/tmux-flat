@@ -1,9 +1,0 @@
-## Center
-set -g window-status-format "#[fg=#{@foreground}, bg=#{@background}] #I #{pane_current_command} "
-set -g window-status-current-format "#[fg=#{@background}, bg=#{@foreground}, bold] #I #{pane_current_command} "
-set -g window-status-separator ""
-set -g status-justify left
-
-## Right
-set -g status-right-length 40
-set -g status-right "#[fg=#{@foreground}, bg=#{@background}, bold] #{user} "
