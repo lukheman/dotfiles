@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # This is the example configuration file for river.
 #
 # If you wish to edit this, you will probably want to copy it to
@@ -22,11 +23,15 @@ waybar &
 
 # application launcer
 # riverctl map normal Super+Space spawn bash ~/.config/rofi/launchers/launcher.sh
-riverctl map normal Super Space spawn "bemenu-run -b -l 10 --fixed-height --prompt search"
-# riverctl map normal Super Space spawn bemenu-run
+# riverctl map normal Super Space spawn "bemenu-run -b -l 10 --fixed-height --prompt search"
+riverctl map normal Super space spawn "bash ~/.config/rofi/launchers/launcher.sh"
+
+riverctl map normal Super+Control Return spawn "bash ~/.config/rofi/powermenu/powermenu.sh"
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn alacritty
+
+riverctl map normal Super W spawn "screenshot.sh full"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -112,6 +117,9 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
+riverctl map normal Super N set-focused-tags next
+riverctl map normal Super B set-focused-tags previous
+
 # Super+Space to toggle float
 riverctl map normal Super S toggle-float
 
@@ -169,7 +177,7 @@ riverctl set-repeat 50 300
 riverctl rule-add -app-id 'float*' -title 'foo' float
 
 # Make all views with app-id "bar" and any title use client-side decorations
-riverctl rule-add -app-id "foot" csd
+# riverctl rule-add -app-id "foot" csd
 
 riverctl rule-add -app-id "firefox" tags 2
 
@@ -177,3 +185,12 @@ riverctl rule-add -app-id "firefox" tags 2
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 2 -outer-padding 2 &
+
+# Tunggu compositor berjalan sepenuhnya
+# sleep 1
+# systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+
+# Tunggu environment variables terupdate
+# sleep 1
+# /usr/lib/xdg-desktop-portal-wlr
