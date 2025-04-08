@@ -31,6 +31,17 @@ export EDITOR="nvim"
 export DESKTOP_SESSION="bspwm"
 export TMUXP_CONFIGDIR=$HOME/.tmuxp
 
+# export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# wayland fix
+export QT_QPA_PLATFORM=wayland
+
+#export XDG_CURRENT_DESKTOP=hyprland
+#export XDG_SESSION_DESKTOP=hyprland
+#export XDG_CURRENT_SESSION_TYPE=wayland
+#export GDK_BACKEND="wayland,x11"
+#export MDZ_ENABLE_WAYLAND=1
+
 set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
 # nvm
@@ -50,7 +61,7 @@ alias ncm="ncmpcpp"
 alias viconf="cd ~/.config/nvim"
 
 # text editor
-alias vi="nvim"
+alias v="nvim"
 alias vihb="nvim -c \"colorscheme habamax\""
 alias hx="helix"
 alias vidb="nvim -c \":DBUI\""
@@ -61,6 +72,11 @@ alias gst="git status"
 # translate shell
 alias trid="trans en:id"
 alias tred="trans id:ed"
+
+# laravel
+alias artisan="php artisan"
+
+alias y="yazi"
 
 starship init fish | source
 atuin init fish | source
