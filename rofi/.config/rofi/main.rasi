@@ -99,5 +99,5 @@ element-text {
 
 element-text.selected {
   text-color: @background;
-  background-color: @green;
+  background-color: @blue;
 }
