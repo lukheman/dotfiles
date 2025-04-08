@@ -1,8 +1,10 @@
 #!/usr/bin/bash
 
-theme=$(ls $HOME/dotfiles/themes | rofi -dmenu -theme ~/.config/rofi/main.rasi)
+THEME_DIR=$HOME/.local/share/themes
+
+theme=$(ls $THEME_DIR | rofi -dmenu -theme ~/.config/rofi/main.rasi)
 
 if [[ -n $theme ]]; then
-  bash "$HOME/dotfiles/themes/$theme/apply.sh"
+  bash apply.sh $theme
 fi
 
