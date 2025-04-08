@@ -11,11 +11,21 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
+# setting monitor
+# wlr-randr --output eDP-1 --off
+# wlr-randr --output HDMI-A-1 --on --preferred
+
+
 # setting wallpaper
-swaybg -i ~/.local/share/wallpapers/01\ Anime\ Girl.jpg -m full &
+# swaybg -i ~/.local/share/wallpapers/01\ Anime\ Girl.jpg -m full &
+# swaybg -i ~/.local/share/wallpapers/02\ Mechanical\ Keyboard.jpg -m full &
+# swaybg -i ~/.local/share/wallpapers/Pacman.png -m full &
+swaybg -i ~/.local/share/wallpapers/wallha.jpg -m full &
 
 # waybar
 waybar &
+
+nm-applet --indicator &
 
 
 # reload
@@ -32,6 +42,8 @@ riverctl map normal Super+Control Return spawn "bash ~/.config/rofi/powermenu/po
 riverctl map normal Super+Shift Return spawn alacritty
 
 riverctl map normal Super W spawn "screenshot.sh full"
+
+riverctl map normal Super Semicolon spawn "switch-themes.sh"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -171,7 +183,7 @@ riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
 
 # Set keyboard repeat rate
-riverctl set-repeat 50 300
+riverctl set-repeat 50 250
 
 # Make all views with an app-id that starts with "float" and title "foo" start floating.
 riverctl rule-add -app-id 'float*' -title 'foo' float
