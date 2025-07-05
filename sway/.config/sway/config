@@ -1,19 +1,21 @@
-exec_always nm-applet
-exec_always dunst
-exec_always wl-paste --watch cliphist store
-exec_always ~/.config/scripts/wallpapers.sh
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
 
-gaps inner 5
-gaps outer 5
-
-font pango:IosevkaTerm Nerd Font Mono 10
 
 default_border pixel 2
 
-# client.focused #21252b #21252b #e3ded3 #21252b
-client.focused #abb2bf #5c6370 #21252b #5c6370
-# client.unfocused #21252b #21252b #abb2bf #21252b
-# client.<class> <border> <background> <text> [<indicator> [<child_border>]]
+
+client.focused          #d6d7d9 #d6d7d9 #d6d7d9 #d6d7d9 #d6d7d9
+client.focused_inactive #a7aab0 #a7aab0 #a7aab0 #a7aab0 #a7aab0
+client.unfocused        #a7aab0 #a7aab0 #a7aab0 #a7aab0 #a7aab0
+client.urgent           #a7aab0 #a7aab0 #a7aab0 #a7aab0 #a7aab0
+client.placeholder      #a7aab0 #a7aab0 #a7aab0 #a7aab0 #a7aab0
+
+gaps inner 8
+gaps outer 1
 
 ### Variables
 #
@@ -24,17 +26,29 @@ set $left h
 set $down j
 set $up k
 set $right l
-
 # Your preferred terminal emulator
+# Recommends: foot
 set $term alacritty
-
 # Your preferred application launcher
-set $menu ~/.config/rofi/launchers/launcher.sh
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+# Recommends: rofi-wayland
+set $rofi_cmd rofi \
+        -terminal '$term'
+# Shows a combined list of the applications with desktop files and
+# executables from PATH.
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg ~/.config/wallpapers/b-050.jpg fill
+# Requires: desktop-backgrounds-compat, swaybg
+
+# output * bg /usr/share/backgrounds/default.png fill
+output * bg ~/.local/share/wallpapers/wallha.jpg fill
+
+# monitor
+output eDP-1 disable
+output HDMI-A-1 resolution 1920x1080 position 0,0
 
 #
 # Example configuration:
@@ -47,64 +61,61 @@ set $menu ~/.config/rofi/launchers/launcher.sh
 #
 # Example configuration:
 #
-
 # exec swayidle -w \
-#          timeout 180 'swaylock -f -c 000000' \
+#          timeout 300 'swaylock -f -c 000000' \
 #          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
-
-exec swayidle -w \
-         timeout 300 'systemctl suspend'
-         # timeout 10 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         # before-sleep 'swaylock -f -c 000000'
-
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 #
 # Example configuration:
 #
-
-  input "2:7:SynPS/2_Synaptics_TouchPad" {
-      dwt enabled
-      tap enabled
-      natural_scroll enabled
-      middle_emulation enabled
-      accel_profile "adaptive"
-      pointer_accel 0.35
-  }
-
-
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-set $floating-default floating enable, resize set 800px 500px
 
-for_window [class="Geeqie|Lxappearance|feh"] $floating-default
-for_window [app_id="pavucontrol|nm-connection-editor|blueman-manager|nemo"] $floating-default
-for_window [all] opacity 0.93
-for_window [app_id="mpv"] opacity 1
-for_window [floating] opacity 1
+input type:keyboard {
+    repeat_delay 250
+    repeat_rate 60
+}
 
-seat * hide_cursor 5000
+input "type:touchpad" {
+    tap enabled
+    natural_scroll enabled
+}
+
+input 1133:50498:Logitech_Wireless_Receiver_Mouse pointer_accel 1
 
 ### Key bindings
 #
 # Basics:
 #
-    # filemanager
-
     # Start a terminal
-    bindsym $mod+a exec $term
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+q kill
 
     # Start your launcher
-    # bindsym $mod+d exec $menu
-    bindsym $mod+space exec $menu
+    bindsym $mod+space exec ~/.config/rofi/launchers/launcher.sh
+    bindsym $mod+semicolon exec switch-themes.sh
+    bindsym $mod+Shift+Return exec ~/.config/rofi/powermenu/powermenu.sh
 
-    bindsym $mod+tab exec rofi -show window
+    # brightnes / light
 
-    bindsym $mod+return exec ~/.config/rofi/powermenu/powermenu.sh
+    bindsym $mod+bracketright exec light -A 5
+    bindsym $mod+bracketleft exec light -U 5
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -114,11 +125,10 @@ seat * hide_cursor 5000
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -170,20 +180,17 @@ seat * hide_cursor 5000
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-
-    bindsym $mod+n workspace next
-    bindsym $mod+b workspace prev
 #
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    # bindsym $mod+b splith
-    # bindsym $mod+v splitv
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    # bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -191,24 +198,14 @@ seat * hide_cursor 5000
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    # bindsym $mod+Shift+space floating toggle
-    bindsym $mod+v floating toggle
+    bindsym $mod+s floating toggle
 
     # Swap focus between the tiling area and the floating area
-    # bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+space focus mode_toggle
 
     # Move focus to the parent container
-    # bindsym $mod+a focus parent
-
-# Screenshot
-
-bindsym $mod+Print exec ~/.config/scripts/screenshot.sh full
-bindsym $mod+Shift+Print exec ~/.config/scripts/screenshot.sh select
-bindsym $mod+F12 exec ~/.config/scripts/screenrecord.sh full
-bindsym $mod+P exec ~/.config/rofi/cliphist/cliphist.sh
-bindsym $mod+I exec ~/.config/rofi/translate/translate.sh
-bindsym $mod+M exec nemo
-
+    bindsym $mod+a focus parent
+#
 # Scratchpad:
 #
     # Sway has a "scratchpad", which is a bag of holding for windows.
@@ -240,19 +237,35 @@ mode "resize" {
     bindsym Right resize grow width 10px
 
     # Return to default mode
-    # bindsym Return mode "default"
+    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
+# Include configs from 3 locations:
+#  - /usr/share/sway/config.d
+#  - /etc/sway/config.d
+#  - $XDG_CONFIG_HOME/sway/config.d ($HOME/.config/sway/config.d)
 #
-# Status Bar:
+# If multiple directories contain the files with the same name, the later
+# directory takes precedence; `$XDG_CONFIG_HOME/sway/config.d/20-swayidle.conf`
+# will always be loaded instead of `/usr/share/sway/config.d/20-swayidle.conf`
+# or `/etc/sway/config.d/20-swayidle.conf`
 #
-# Read `man 5 sway-bar` for more information about this section.
+# This mechanism permits overriding our default configuration per-system
+# (/etc) or per-user ($XDG_CONFIG_HOME) basis. Just create the file you
+# want to modify/override in the higher-level directory.
+#
+# For example, to disable the default bar from Fedora configs, you'll need to
+#     $ echo -n > "$HOME/.config/sway/config.d/90-bar.conf"
+#
+# Note the quoting, the $() and the arguments quoting. All the parts are equally
+# important to make the magic work. And if you want to learn the secret behind
+# the trick, it's all in the `wordexp(3)`.
+#
+for_window [app_id="blueman-manager"] floating enable, resize set 800 500
+for_window [class="foot"] opacity 0.8
 
-bar {
-  swaybar_command waybar
-}
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
-include /etc/sway/config.d/*
+
