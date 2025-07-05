@@ -89,6 +89,10 @@ alias vidb="nvim -c \":DBUI\""
 
 # git
 alias gst="git status"
+alias push="git push origin main"
+alias pull="git pull origin main"
+alias ga="git add"
+alias gcm="git commit"
 
 # translate shell
 alias trid="trans en:id"
