@@ -100,12 +100,19 @@ alias tred="trans id:ed"
 
 # laravel
 alias artisan="php artisan"
+alias migrate="php artisan migrate"
+alias migrate:fresh="php artisan migrate:fresh"
+alias migrate:seed="php artisan migrate:fresh --seed"
 
 alias y="yazi"
 
-starship init fish | source
-atuin init fish | source
-
-
 # Created by `pipx` on 2024-07-20 10:24:03
 set PATH $PATH /home/akmal/.local/bin
+set -xg PATH "$HOME/development/flutter/bin:$PATH"
+
+# set -gx QT_QPA_PLATFORM xcb
+# set -gx QT_QPA_PLATFORM xcb
+
+starship init fish | source
+atuin init fish | source
+zoxide init fish | source
