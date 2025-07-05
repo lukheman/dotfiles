@@ -63,6 +63,8 @@ export TMUXP_CONFIGDIR=$HOME/.tmuxp
 
 set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
+# set -Ux XDG_CURRENT_DESKTOP Hyprland
+
 # nvm
 set -x NVM_DIR $HOME/.nvm
 set -x PATH $NVM_DIR/bin $PATH
