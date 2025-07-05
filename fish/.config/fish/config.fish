@@ -27,6 +27,24 @@ function f
   end
 end
 
+function shon
+    eval (ssh-agent -c)
+    ssh-add ~/.ssh/akmal
+end
+
+# # Setiap kali pindah direktori, simpan ke file
+# function save_pwd --on-variable PWD
+#     echo $PWD > ~/.last_dir
+# end
+#
+# # Saat shell dimulai, cd ke direktori terakhir jika ada
+# if test -f ~/.last_dir
+#     set last_dir (cat ~/.last_dir)
+#     if test -d $last_dir
+#         cd $last_dir
+#     end
+# end
+
 export EDITOR="nvim"
 export DESKTOP_SESSION="bspwm"
 export TMUXP_CONFIGDIR=$HOME/.tmuxp
