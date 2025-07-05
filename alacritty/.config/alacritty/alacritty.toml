@@ -22,7 +22,7 @@ family = "Iosevka NF"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka NF"
+family = "Consolas"
 style = "Regular"
 
 [window]
