@@ -8,7 +8,7 @@
 mode = scientific
 
 # Accepts only non-negative values.
-; framerate = 60
+framerate = 60
 
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
@@ -22,7 +22,7 @@ mode = scientific
 
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-; bars = 0
+bars = 60
 ; bar_width = 3
 ; bar_spacing = 3
 # bar_height is only used for output in "noritake" format
