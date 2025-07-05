@@ -52,9 +52,10 @@ export TMUXP_CONFIGDIR=$HOME/.tmuxp
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # wayland fix
-export QT_QPA_PLATFORM=wayland
+# export QT_QPA_PLATFORM=wayland
 
-#export XDG_CURRENT_DESKTOP=hyprland
+# export XDG_CURRENT_DESKTOP=hyprland
+
 #export XDG_SESSION_DESKTOP=hyprland
 #export XDG_CURRENT_SESSION_TYPE=wayland
 #export GDK_BACKEND="wayland,x11"
