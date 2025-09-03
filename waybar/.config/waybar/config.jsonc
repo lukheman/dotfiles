@@ -1,200 +1,157 @@
 {
   "layer": "top",
-  "position": "top",
-  "spacing": 0,
-  "height": 30,
+  "height": 47,
+  "reload_style_on_change": true,
   "modules-left": [
-    // "custom/logo",
-    "sway/workspaces",
-    "hyprland/workspaces"
-    // "sway/window"
+    "hyprland/workspaces",
+    "mpris",
+    "gamemode",
+    "privacy"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "sway/mode",
-    // "custom/cliphist",
+    "tray",
+    "cpu",
     "memory",
     "pulseaudio",
     "battery",
-    "network",
-    "tray",
-    "custom/power"
+    "power-profiles-daemon",
   ],
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "on-click-right": "fullscreen",
-    "icon-theme": "Adwaita",
-    "icon-size": 25,
-    "tooltip-format": "{title}"
-  },
-  "sway/mode": {
-    "format": " {}",
-    "max-length": 50
-  },
-  "sway/window": {
-    "format": "{title}",
-    "max-length": 20,
-    "rewrite": {
-      // "(.*) - firefox": "🌎 $1",
-      // "(.*) - nvim": " $1",
-      // "(.*) - zsh": " [$1]"
-    }
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "10": "",
-      "urgent": "",
-      "focused": "",
-      "default": ""
-    },
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-    }
-  },
   "hyprland/workspaces": {
+    "format": "<span size='small' font='normal Font Awesome 6 Free'>{icon}</span>",
     "on-click": "activate",
-    "format": "{icon}",
+    "sort-by-number": true,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
     "format-icons": {
-      "default": "",
-      "1": "",
-      "2": "󰈹",
-      "3": "󰍹",
-      "4": "",
-      "5": "󰝰",
-      "6": "",
-      "7": "󰍛",
-      "8": "",
-      "9": ""
-    },
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": []
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
     }
   },
-  // Memory module
-  "memory": {
-    "format": "   {used} GiB ({percentage}%)",
-    "tooltip": false,
-    "interval": 10,
-    "on-click-right": "kitty -e btop"
+  "mpris": {
+    "format": "{player_icon}  {title} - {artist}",
+    "format-paused": "{status_icon}  {title} - {artist}",
+    "max-length": 50,
+    "dynamic-len": 10,
+    "on-scroll-up": "playerctl --player=spotify volume 0.05+",
+    "on-scroll-down": "playerctl --player=spotify volume 0.05-",
+    "player-icons": {
+      "default": "󰎈",
+      "mpv": "",
+      "vlc": "<span color='#E85E00'>󰕼</span>",
+      "spotify": "<span color='#1DB954'></span>",
+      "brave": "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>"
+    },
+    "status-icons": {
+      "paused": "⏸",
+      "playing": "",
+      "stopped": ""
+    }
   },
-  "tray": {
-    "spacing": 10
+  "gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "glyph": "",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 12,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      }
+    ]
   },
   "clock": {
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "format-alt": "  {:%a, %d %b %Y}",
-    "format": "  {:%I:%M %p}"
+    "interval": 1,
+    "format": " {:%d.%m.%Y | %H:%M}  ",
+    "tooltip": false,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
-  "network": {
-    "format-wifi": "{icon} {essid}",
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
-    "format-ethernet": "󰀂",
-    "format-alt": "󱛇",
-    "format-disconnected": "󰖪",
-    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "on-click-right": "~/.config/rofi/wifi/wifi.sh &",
-    // "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
-    "interval": 5,
-    "nospacing": 1,
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10
   },
-  // PulseAudio module
-  "pulseaudio": {
-    "scroll-step": 1,
-    "format": "{icon} {volume}%",
-    "format-muted": "󰝟 {volume}%",
-    "format-bluetooth": "󰂰 {volume}%",
-    "format-source-muted": "󰍭",
+  "cpu": {
+    "interval": 30,
+    "format": " {usage}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {used:0.1f} GB"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
     "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "󰖁 0% {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
       "default": [
-        "󰕿",  // low volume
-        "󰖀",  // medium volume
-        "󰕾"   // high volume
+        "",
+        ""
       ]
     },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol",
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
-    "tooltip": false,
-    "tooltip-format": "{desc} - {volume}%",
-    "max-volume": 130
-  },
-  "custom/logo": {
-    "format": "  ",
-    "tooltip": false,
-    // "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ],
+    "format-source": "",
+    "format-source-muted": ""
   },
   "battery": {
-    "format": "{icon} {capacity}%",
-    "format-icons": {
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
-      "default": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ]
-    },
-    "format-full": "Charged ",
-    "interval": 5,
     "states": {
-      "warning": 20,
-      "critical": 10
+      "good": 80,
+      "warning": 30,
+      "critical": 15
     },
-    "tooltip": true
-  },
-  "custom/power": {
-    "format": "󰤆",
-    "tooltip": false,
-    "on-click": "~/.config/rofi/powermenu/powermenu.sh &"
-  },
-  "custom/cliphist": {
-    "format": "󱃕",
-    "tooltip": false,
-    "on-click": "~/.config/rofi/cliphist/cliphist.sh &"
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   }
 }
