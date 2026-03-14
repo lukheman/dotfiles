@@ -1,3 +1,5 @@
+@import "color.css";
+
 * {
     font-family: Iosevka NF, Material Design Icons, IosevkaTerm Nerd Font Propo;
     font-weight: bold;
@@ -6,14 +8,13 @@
 }
 
 window#waybar {
-    background: transparent;
-    /* main window transparent background */
+    background: transparent; /* main window transparent background */
 }
 
 tooltip {
     font-family: inherit;
-    background: #1b1c1e; /* black */
-    border: 2px solid #57a5e5; /* blue */
+    background: @black;
+    border: 2px solid @blue;
     border-radius: 5px;
 }
 
@@ -28,13 +29,14 @@ tooltip {
 #memory,
 #pulseaudio,
 #gamemode,
-#custom-updates {
-    background: #232326;
+#custom-updates,
+#battery {
+    background: @background;
     margin: 10px 4px 4px 4px;
     padding: 4px 10px;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.185);
     border-radius: 8px;
-    color: #a7aab0; /* foreground */
+    color: @foreground;
 }
 
 #clock {
@@ -42,13 +44,9 @@ tooltip {
 }
 
 #privacy-item {
-    background: #de5d68; /* red */
-    color: #1b1c1e; /* black */
+    background: @red;
+    color: @black;
 }
-
-/**#tray menu {
-    font-weight: bold;
-}**/
 
 #workspaces {
     padding: 0 3px;
@@ -58,11 +56,10 @@ tooltip {
     padding: 0px 12px 0px 8px;
     margin-left: 3px;
     border: 1px solid transparent;
-    transition-property:
-        background-color, border-left-color, border-right-color;
+    transition-property: background-color, border-left-color, border-right-color;
     transition-duration: 0.1s;
     font-size: 10px;
-    color: #d6d7d9; /* white */
+    color: @white;
 }
 
 #workspaces button.empty {
@@ -74,45 +71,34 @@ tooltip {
 }
 
 #workspaces button.active {
-    background: #57a5e5; /* blue */
-    color: #1b1c1e; /* black for better contrast */
+    background: @blue;
+    color: @black;
 }
 
 #workspaces button:hover {
-    background: #8fb573; /* green */
-    color: #1b1c1e;
+    background: @green;
+    color: @black;
 }
 
 #power-profiles-daemon {
-    color: #8fb573; /* purple */
+    color: @green;
 }
 
 @keyframes blink {
     to {
-        background-color: #de5d68; /* red */
+        background-color: @red;
     }
 }
 
-#battery {
-    background: #232326;
-    margin: 10px 4px 4px 4px;
-    padding: 4px 10px;
-    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.185);
-    border-radius: 8px;
-    color: #a7aab0; /* default foreground */
-}
-
-/* status penuh / bagus */
+/* status battery */
 #battery.good {
-    color: #8fb573; /* green */
+    color: @green;
 }
 
-/* status warning */
 #battery.warning {
-    color: #dbb671; /* yellow */
+    color: @yellow;
 }
 
-/* status kritis */
 #battery.critical {
-    color: #de5d68; /* red */
+    color: @red;
 }

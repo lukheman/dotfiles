@@ -5,16 +5,17 @@ import netifaces as ni
 import argparse
 
 parser = argparse.ArgumentParser(description='scp wrapper')
-parser.add_argument('file', type=str, help='file to copy')
+parser.add_argument('files', nargs='+', help='file(s) to copy')
 
 def get_ip_server():
     gateways = ni.gateways()
     default_gateways = gateways['default'][ni.AF_INET][0]
-
     return default_gateways
 
-def scp(source_file: str, target_file: str):
-    result = subprocess.run(['scp', '-P', '2222', source_file, target_file])
+def scp(files: list[str], target_file: str):
+    # Jalankan scp dengan semua file
+    result = subprocess.run(['scp', '-P', '2222', *files, target_file])
+    return result
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -22,7 +23,7 @@ if __name__ == '__main__':
     username = 'akmal'
     ip = get_ip_server()
 
-    source_file = args.file
+    files = args.files
     target_file = f'{username}@{ip}:/sdcard/Computer'
 
-    scp(source_file, target_file)
+    scp(files, target_file)

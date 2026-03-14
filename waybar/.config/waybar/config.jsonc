@@ -99,7 +99,7 @@
   },
   "memory": {
     "interval": 30,
-    "format": " {used:0.1f} GB"
+    "format": "  {used:0.1f} GB"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -142,10 +142,10 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time}  {icon}",
     "format-icons": [
       "",
       "",

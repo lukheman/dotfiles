@@ -1,8 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export ANDROID_HOME:/home/akmal/development/Android
-SETUVAR --export JAVA_HOME:/usr/lib/jvm/java\x2d17\x2dopenjdk
-SETUVAR --export --path PATH:/home/akmal/\x2econfig/composer/vendor/bin\x1e/home/akmal/\x2envm/bin\x1e/home/akmal/Code/flutter/bin\x1e/home/akmal/Code/flutter\x1e/home/akmal/\x2envm/bin\x1e/home/akmal/\x2envm/bin\x1e/home/akmal/\x2envm/bin\x1e/home/akmal/\x2eatuin/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/home/akmal/\x2elocal/bin\x1e/home/akmal/\x2elocal/bin\x1e/home/akmal/\x2elocal/bin\x1e/home/akmal/\x2elocal/bin
 SETUVAR --export XDG_CURRENT_DESKTOP:Hyprland
 SETUVAR __fish_initialized:3800
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
@@ -37,4 +35,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/usr/lib/jvm/java\x2d17\x2dopenjdk/bin\x1e/usr/lib/jvm/java\x2d21\x2dopenjdk/bin\x1e/home/akmal/development/Android/cmdline\x2dtools/latest/bin\x1e/home/akmal/development/Android/platform\x2dtools\x1e/opt/audiorelay/bin\x1e/opt/audiorelay/bin/AudioRelay\x1e/home/akmal/Code/flutter/bin\x1e/home/akmal/Code/flutter
+SETUVAR fish_user_paths:/home/akmal/\x2econfig/composer/vendor/bin

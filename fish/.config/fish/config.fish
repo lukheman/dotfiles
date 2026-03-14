@@ -38,16 +38,15 @@ end
 # end
 #
 # # Saat shell dimulai, cd ke direktori terakhir jika ada
-# if test -f ~/.last_dir
-#     set last_dir (cat ~/.last_dir)
-#     if test -d $last_dir
-#         cd $last_dir
+# if test -f ~/.last_dir set last_dir (cat ~/.last_dir) if test -d $last_dir cd $last_dir
 #     end
 # end
 
 export EDITOR="nvim"
 export DESKTOP_SESSION="bspwm"
 export TMUXP_CONFIGDIR=$HOME/.tmuxp
+
+export GEMINI_API_KEY="AIzaSyBQRAb8xBmud3LQPooegzrcy_n9Yex9uv4"
 
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 
@@ -61,7 +60,7 @@ export TMUXP_CONFIGDIR=$HOME/.tmuxp
 #export GDK_BACKEND="wayland,x11"
 #export MDZ_ENABLE_WAYLAND=1
 
-set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
+# set -x FZF_DEFAULT_OPTS '--bind=tab:down,shift-tab:up'
 
 # set -Ux XDG_CURRENT_DESKTOP Hyprland
 
@@ -100,19 +99,37 @@ alias tred="trans id:ed"
 
 # laravel
 alias artisan="php artisan"
+alias serv="php artisan serve"
 alias migrate="php artisan migrate"
 alias migrate:fresh="php artisan migrate:fresh"
 alias migrate:seed="php artisan migrate:fresh --seed"
 
 alias y="yazi"
+alias aplikasita="php artisan serve --port 8080"
 
 # Created by `pipx` on 2024-07-20 10:24:03
 set PATH $PATH /home/akmal/.local/bin
 set -xg PATH "$HOME/development/flutter/bin:$PATH"
 
+set -U fish_user_paths $HOME/.config/composer/vendor/bin $fish_user_paths
+
 # set -gx QT_QPA_PLATFORM xcb
 # set -gx QT_QPA_PLATFORM xcb
+
+set -x PATH /usr/lib/jvm/java-25-openjdk/bin $PATH
+set -x JAVA_HOME /usr/lib/jvm/java-25-openjdk
+
+# Android SDK
+set -x ANDROID_SDK_ROOT /opt/android-sdk
+set -x PATH $PATH $ANDROID_SDK_ROOT/platform-tools
+set -x PATH $PATH $ANDROID_SDK_ROOT/tools/bin
+set -x PATH $PATH $ANDROID_SDK_ROOT/emulator
+set -x PATH $PATH $ANDROID_SDK_ROOT/tools
 
 starship init fish | source
 atuin init fish | source
 zoxide init fish | source
+
+# phpenv setup
+set -x PATH $HOME/.phpenv/bin $PATH
+status --is-interactive; and source (phpenv init -|psub)
