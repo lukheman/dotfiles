@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+background="#1f1f28"
+foreground="#c4b28a"
+black="#0d0c0c"
+white="#c5c9c5"
+red="#c4746e"
+green="#699469"
+blue="#658594"
+yellow="#c4b28a"
+purple="#a292a3" # also known as magenta
+cyan="#8992a7"

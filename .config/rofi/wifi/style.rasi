@@ -1,0 +1,9 @@
+@theme "~/.config/rofi/main.rasi"
+
+window {
+  location: northeast;
+}
+
+element-icon {
+  enabled: false;
+}
