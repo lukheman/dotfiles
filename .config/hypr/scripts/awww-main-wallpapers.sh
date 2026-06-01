@@ -1,6 +1,6 @@
 #!/bin/bash
 # Path to wallpapers (adjust if necessary)
-wallpaper_dir="$HOME/.local/share/wallpapers/"
+wallpaper_dir="$HOME/dotfiles/.local/share/wallpapers"
 state_file="$HOME/.config/hypr/.last_wallpaper_index"
 
 # Generate an ordered list of files, excluding dark.png and light.png
@@ -23,7 +23,7 @@ next_index=$(((last_index + 1) % total))
 next_wallpaper="${wallpapers[$next_index]}"
 
 # Apply the wallpaper with transition
-swww img "$next_wallpaper" --transition-step 80 --transition-fps 80 --transition-type any --transition-duration 1
+awww img "$next_wallpaper" --transition-step 80 --transition-fps 80 --transition-type any --transition-duration 1
 
 # Save the new index
 echo "$next_index" >"$state_file"
